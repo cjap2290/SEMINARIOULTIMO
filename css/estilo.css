@@ -25,14 +25,14 @@ src: url(fuentes/Ubuntu-BI.ttf) format('truetype');
 
 
 
-h1,h2,h3,h4{
+h1,h2,h3{
 font-family: ubuntuBold;
 }
 
-h6{font-family: ubuntuRegular;}
+h4{font-family: ubuntuRegular;}
 
 h1{
-color: white;
+color: black;
 font-size: 48px;
 margin-top:10px;
 display:inline;
@@ -41,7 +41,7 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 
 }
 h2{
-color: white;
+color: black;
 font-size: 16px;
 top:-20%;
 margin-top:10px;
@@ -53,6 +53,7 @@ padding:0px;
 
 
 h3{
+color: black;
 margin:0px;
 padding:0px;
 font-size:36px;
@@ -61,14 +62,17 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 h4{
 margin:0px;
-padding:0px;
+padding-top:30px;
+padding-bottom:30px;
+
 font-size:14px;
 text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
 color:black;
+
 }
 h6{
-color:black;
-font-size: 12px;
+
 }
 p{
 font-family: ubuntuRegular;
@@ -131,7 +135,7 @@ body{
 text-align: center;
 margin:0px;
 
-background: url('../images/fondo.png')no-repeat;
+background: url('../images/fondo.png') repeat-y;
  
 }
 
@@ -139,7 +143,7 @@ background: url('../images/fondo.png')no-repeat;
 text-align: left;
 margin:auto;
 width:80%;
-height:100%;
+
 position: relative;
 
 }
@@ -166,6 +170,8 @@ width:100%;
 border: 1px solid white;
 background: rgba(255,255,255,0.5);
 color: rgba(255,255,255,1);
+
+
 }
 
 /*contenido */

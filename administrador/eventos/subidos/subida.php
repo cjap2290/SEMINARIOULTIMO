@@ -56,7 +56,7 @@ $result=mysql_query($sql);
 <tr>
 <td width="7%">&nbsp;</td>
 <td width="74%" class="ampliar">La foto seleccionado se mostrara con el articulo. </td>
-<td width="19%"><a href="../manager.php" class="subtituloplan">Regresar</a></td>
+<td width="19%"><a href="../bandeja.php" class="subtituloplan">Regresar</a></td>
 </tr>
 <tr>
 <td>&nbsp;</td>

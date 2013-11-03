@@ -2,10 +2,9 @@
 $link = conectarse();
 
 
-//Para el pie de pagina
-$sql="select * from pie order by id desc";
+//Para la noticia
+$sql="select * from noticias order by id desc";
 $result1=mysql_query($sql);
-
 
 ?>
 
@@ -41,8 +40,8 @@ eval("page" + id + " = window.open(URL, '" + id +
 <tr>
 
 
+<a href="javascript:cargarventana('nuevanoticia.php')" class="c"> Nueva Noticia </a><br><br>
 
-<a href="javascript:cargarventana('nuevopie.php')" class="c"> Nuevo Pie de pagina </a><br><br>
 <a href="../bandeja.php" class="c">Principal</a>
 </tr>
 </table> </td>
@@ -52,7 +51,7 @@ eval("page" + id + " = window.open(URL, '" + id +
 
 <!--Para la cabecera-->
 <table width="91%" border="0" cellspacing="1" cellpadding="2">
-<caption class="foninput2">PIE DE PAGINA</caption>
+<caption class="foninput2">CEBECERA</caption>
 <?php if ($row= mysql_fetch_array($result1)){ ?>
 <tr> <td colspan="4"> </td>
 </tr> <tr bgcolor="#CCCC99" class="subtituloplan">
@@ -63,14 +62,14 @@ eval("page" + id + " = window.open(URL, '" + id +
 <td width="14%" align="center"><strong>Eliminar</strong></td>
 </tr> <?php DO{ ?> <tr >
 <?php if ($row["principal"]=="1") { ?>
-<td align="left"><img src="principal.gif" border="0"><a href="javascript:cargarventana('modificar.php?Modee=<?php echo $row['id'] ?>')" class="c"> <?php echo $row["descripcion"] ?></a></td>
+<td align="left"><img src="principal.gif" border="0"><a href="javascript:cargarventana('modificar.php?Modee=<?php echo $row['id'] ?>')" class="c"> <?php echo $row["titulo"] ?></a></td>
 <?php } else { ?>
-<td align="left"><img src="index.gif" border="0"><a href="javascript:cargarventana('modificar.php?Modee=<?php echo $row['id'] ?>')" class="c"> <?php echo $row["descripcion"] ?></a></td>
+<td align="left"><img src="index.gif" border="0"><a href="javascript:cargarventana('modificar.php?Modee=<?php echo $row['id'] ?>')" class="c"> <?php echo $row["titulo"] ?></a></td>
 <?php }?>
 <td align="center"> &nbsp;</td>
 <?php if ($row["mostrar"]=="1") { ?>
 <td align="center">Si</td>
-<td width="14%" align="center"><a href="principalpie.php?Modee=<?php echo $row["id"] ?>" class="c"> principal </a> </td>
+<td width="14%" align="center"><a href="principalnoticia.php?Modee=<?php echo $row["id"] ?>" class="c"> principal </a> </td>
 <td width="6%" align="center"> <a href="pre.php?Modee=<?php echo $row["id"] ?>" class="c"> Eliminar </a></td>
 <?php } else { ?>
 <td width="3%" align="center">No</td>

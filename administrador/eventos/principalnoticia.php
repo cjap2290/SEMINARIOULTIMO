@@ -2,14 +2,13 @@
 $cn = Conectarse();
 $codigo = $_GET["Modee"];
 
-//PARA EL CONTENIDO
-$sql="update contenido set principal='0'";
-$sql2="update contenido set principal='1' where id='$codigo'";
-$result=mysql_query($sql);
-$result2=mysql_query($sql2);
 
 
-
+//PARA LA CABECERA
+$noticia="update noticia set principal='0'";
+$noticia2="update noticia set principal='1' where id='$codigo'";
+$rsnoticia=mysql_query($noticia);
+$rsnoticia2=mysql_query($noticia2);
 
 
 
@@ -20,7 +19,7 @@ $result2=mysql_query($sql2);
 <link rel="stylesheet" type="text/css" href="../bruni.css">
 <body topmargin="0" leftmargin="0">
 <table width="100%" cellspacing="1" cellpadding="1">
-<tr class="encabezados">
+<tr class="noticias">
 <td width="85%">&nbsp;</td>
 <td width="15%">&nbsp;</td>
 </tr>
@@ -29,7 +28,7 @@ $result2=mysql_query($sql2);
 <td class="dtexto">&nbsp;</td>
 </tr>
 <tr class="cuerpo1">
-<td height="26" valign="bottom"><div align="right"><span class="dtexto"><a href="managercontenido.php" class="b">Regresar</a></span></div></td>
+<td height="26" valign="bottom"><div align="right"><span class="dtexto"><a href="managernoticia.php" class="b">Regresar</a></span></div></td>
 <td valign="bottom">&nbsp;</td>
 </tr>
 </table>

@@ -9,7 +9,7 @@ history.go(1)
 <body topmargin="0" leftmargin="0" >
 
 <?php 
-session_start();
+SESSION_START();
 if($_SESSION['iduser']=="cjap90")
 { ?>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" >
@@ -33,6 +33,11 @@ if($_SESSION['iduser']=="cjap90")
 <tr><td height="10"></td></tr>
 <tr >
 <td height="40" class="bloquemenu"><a href="eventos/managerpie.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Pie</a></td>
+</tr>
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managernoticia.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Noticia</a></td>
 </tr>
 
 <tr><td height="10"></td></tr>

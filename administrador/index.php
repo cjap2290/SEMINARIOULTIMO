@@ -17,7 +17,7 @@
 <!-- This script and many more are available free online at -->
 <!-- The JavaScript Source!! http://javascript.internet.com -->
 
-<!-- Begin
+
 function checkFields() {
 missinginfo = "";
 if (document.form.t1.value == "") {
@@ -44,7 +44,7 @@ else
 
 return true;
 }
-//  End -->
+
 </script>
 		
     </head>

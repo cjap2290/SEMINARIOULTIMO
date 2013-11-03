@@ -11,6 +11,15 @@ $result1=mysql_query($sql1);
 //para el pie
 $sql2="delete from pie where id='$codigo'";
 $result2=mysql_query($sql2);
+
+
+//para el contenido
+$sql3="delete from contenido where id='$codigo'";
+$result3=mysql_query($sql2);
+
+//para la noticia
+$sql4="delete from noticias where id='$codigo'";
+$result4=mysql_query($sql2);
 ?>
 <html>
 <head>

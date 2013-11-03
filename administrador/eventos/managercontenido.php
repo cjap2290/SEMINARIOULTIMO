@@ -53,12 +53,12 @@ eval("page" + id + " = window.open(URL, '" + id +
 
 <!--Para el CONTENIDO-->
 <table width="91%" border="0" cellspacing="1" cellpadding="2">
-<caption class="foninput2">CONTENIDO</caption>
+<caption class="foninput2">CONTENIDO DEL INDEX</caption>
 <?php if ($row= mysql_fetch_array($result)){ ?>
 <tr> <td colspan="4"> </td>
 </tr> <tr bgcolor="#CCCC99" class="subtituloplan">
 <td width="36%" align="left">Titulo del Evento </td>
-<td width="8%" align="center"><strong>imagen</strong></td>
+<td width="8%" align="center"><strong>&nbsp;</strong></td>
 <td width="9%" align="center">Mostrar</td>
 <td width="6%" align="center">Principal</td>
 <td width="14%" align="center"><strong>Eliminar</strong></td>
@@ -68,7 +68,7 @@ eval("page" + id + " = window.open(URL, '" + id +
 <?php } else { ?>
 <td align="left"><img src="index.gif" border="0"><a href="javascript:cargarventana('modificar.php?Modee=<?php echo $row['id'] ?>')" class="c"> <?php echo $row["titulo"] ?></a></td>
 <?php }?>
-<td align="center"> <a href="subidos/presubida.php?Modee=<?php echo $row["id"] ?>" class="c"> imagen </a></td>
+<td align="center"> &nbsp;</td>
 <?php if ($row["mostrar"]=="1") { ?>
 <td align="center">Si</td>
 <td width="14%" align="center"><a href="principalcontenido.php?Modee=<?php echo $row["id"] ?>" class="c"> principal </a> </td>
