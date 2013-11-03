@@ -1,90 +1,65 @@
+<!DOCTYPE HTML>
 
-
-<!--ESTO FORMA PARTE DEL CAPTCHA ANIMADO DE ARE YOU HUMAN-->
-			<?php
-// Instantiate the AYAH object. You need to instantiate the AYAH object
-// on each page that is using PlayThru.
-require_once("captcha1/ayah.php");
-$ayah = new AYAH();
-// Check to see if the user has submitted the form. You will need to replace
-// 'my_submit_button_name' with the name of your 'Submit' button.
-if (array_key_exists('my_submit_button_name', $_POST))
-{
-          // Use the AYAH object to see if the user passed or failed the game.
-          $score = $ayah->scoreResult();
-          if ($score)
-          {
-                     // This happens if the user passes the game. In this case,
-                     // we're just displaying a congratulatory message.
-                     echo "Felicidades";
-          }
-          else
-          {
-                // This happens if the user does not pass the game.
-                     echo "Por Favor intentalo de nuevo";
-          }
-}
+<?php
+session_start();
 ?>
 
-<!--FIN CODIGO PHP CAPTCHA ANIMADO-->
 
-<!DOCTYPE HTML>
+
+
 <html>
 	<head>
 		<title>CABLE MAXUY</title>
+                <meta charset="utf-8">
 		<link type="image/x-icon" href="images/favicon.ico" rel="icon" />
 		<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
 		<link rel=stylesheet href="css/estilo.css" type="text/css" />
 		
-		<link rel="stylesheet" href="CSS3 Menu_files/css3menu4/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
-		
-		
-<script type="text/javascript">
-
-<!-- This script and many more are available free online at -->
-<!-- The JavaScript Source!! http://javascript.internet.com -->
-
-//Begin
-function checkFields() {
-missinginfo = "";
-if (document.form.nombre.value == "") {
-missinginfo += "\n     -  Nombre";
-}
-
-if ((document.form.email.value == "") || (document.form.email.value.indexOf('@') == -1) || (document.form.email.value.indexOf('.') == -1)) {
-missinginfo += "\n     -  Direccion de correo";
-}
-
-if(document.form.comentario.value == "") {
-missinginfo += "\n     -  comentarios";
-}
-
-
-if (missinginfo != "") {
-missinginfo ="_____________________________\n" +
-"Te ha faltado introducir los siguientes datos:\n" +
-missinginfo + "\n_____________________________" +
-"\n Por favor pulsa enter, rellena los datos y prueba de nuevo";
-alert(missinginfo);
-
-
-return false;
-}
-else 
-
-
-
-alert('POR FAVOR ACIERTE EL SIGUIENTE CAPTCHA ANIMADO');
-
-
-return true;
-}
-
-
-//  End -->
-</script>
-
-
+		<link rel="stylesheet" href="CSS3Menu_files/css3menu4/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
+                <style>
+                    #form{
+                margin:100px;
+                width: 350px;
+                padding: 10px;
+				margin:0 auto;
+            }
+            #form label{
+                font:bold 11px arial;
+                color: #565656;
+                padding-left: 1px;
+            }
+            #form label.mandat{color: #f00;}
+            #form input[type="text"]{
+                margin-bottom: 8px;
+                padding: 5px;
+                font: 12px arial;
+                color: #0060a3;
+            }
+            #form textarea{
+                width: 340px;
+                height: 80px;
+                resize: none;
+                margin: 0 0 8px 1px;
+                padding: 5px;
+                font: 12px arial;
+                color: #4A3C31;
+            }
+            #form img{
+                margin-bottom: 8px;
+            }
+            #form input[type="submit"]{
+                background-color: #0064aa;
+                border: none;
+                color: #fff;
+                padding: 5px 8px;
+                cursor: pointer;
+                font:bold 12px arial;
+            }
+            .error{
+				text-align:center;
+				color:#C33;
+            }
+                </style>
 	</head>
 	<body>
 	<?php
@@ -96,18 +71,10 @@ $rsencabezado="select * from encabezado where principal=1";
 $encabezado=mysql_query($rsencabezado);
 $rsencabezado=mysql_fetch_array($encabezado);
 
-
-
 //PARA EL PIE DE PAGINA
 $rspie="select * from pie where principal=1";
 $pie=mysql_query($rspie);
 $rspie=mysql_fetch_array($pie);	
-		
-
-
-
-
-
 
 ?>
 		
@@ -132,69 +99,67 @@ $rspie=mysql_fetch_array($pie);
 		
 		</br>
 			<div id="contenido">
-			
-				<form name="form" onSubmit="return checkFields();" action="insertarContacto.php" method="POST">
-				<input type="hidden" name="to" value="you @ your domain . web">
-				<input type="hidden" name="subject" value="Freedback">
-				
-					<table border=0>
-						<tr>
-							<td width=50%>
-								<p style="text-align:right;">Introduce tu nombre</p>
-							</td>
-							<td width=50%>
-								<input type="text" size=50% name="nombre"/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p style="text-align:right;">Introduce tu email</p>
-							</td>
-							<td>
-								<input type="text" size=50% name="email"/>
-							</td>
-						</tr>
-						<tr>
-							<td><p style="text-align:right;">Escribe tu mensaje</p>
-							</td>
-							<td>	
-								<textarea cols=50% rows=6 name="comentario"></textarea><br><br>
-							</td>
-						</tr>
-						
-						
-						
-						<tr>
-							<td>
-								<p style="text-align:right;"></p>
-							</td>
-							<td>
-									
-		
-										<?php
-													 
-														// Use the AYAH object to get the HTML code needed to
-														// load and run PlayThru. You should place this code
-														// directly before your 'Submit' button.
-														echo $ayah->getPublisherHTML();
-										?>
-		
-								<input type="submit" value="Enviar" name="my_submit_button_name">
-												
-												
-											
-       
-
-								
-							</td>
-						</tr>
-						
-					
-					</table>
-					
-
-				</form>
-	
+                                <?php
+                                    if(isset($_POST['enviar'])){
+                                        error_reporting(0);
+                                        $nombre = strtoupper($_POST['nombre']);
+                                        $email = $_POST['email'];
+                                        $comentario = strtoupper($_POST['comentario']);
+                                        $captcha = $_POST['captcha'];
+                                        $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+                                        
+                                        if($nombre == ""){
+                                            $mensaje = "Ingrese nombre para continuar";
+                                        }else if(!preg_match($regex, $email)){
+                                            $mensaje = "Ingrese email válido";
+                                        }else if($comentario == ""){
+                                            $mensaje = "Ingrese comentario";
+                                        }else if($captcha != $_SESSION['cap_code']){
+                                            $mensaje = "Código Captcha incorrecto";
+                                        }else{
+                                            $rsinsertar="insert into contacto(nombre,email,comentario) values('$nombre','$email','$comentario')";
+                                            if(@mysql_query($rsinsertar)){
+                                                $mensaje = "Mensaje enviado correctamente";
+                                            }else{
+                                                $mensaje = "No se pudo enviar el mensaje";
+                                            }
+                                        }
+                                    }else{
+                                        $mensaje = "";
+                                    }
+                                ?>
+           <form action="#" method="post">
+            <div id="form">
+                <table border="0" width="100%">
+                    <tr>
+                        <td colspan="2"><label>Nombres:</label><label class="mandat"> *</label><br/>
+                            <input type="text" name="nombre" id="nombre" size="62"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label>Correo:</label><label class="mandat"> *</label><br/>
+                            <input type="text" name="email" id="email" size="62"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label>Mensaje:</label><label class="mandat"> *</label><br/>
+                            <textarea  name="comentario" id="comentario"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label>Ingrese el contenido de la imagen</label><label class="mandat"> *</label></td>
+                    </tr>
+                    <tr>
+                        <td width="60px" colspan="2">                           
+                            <input type="text" name="captcha" id="captcha" maxlength="6" size="6" style="float:left"/><img src="captcha.php" style="float: left;"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Enviar comentario" id="enviar" name="enviar"/></td>
+                        <td></td>
+                    </tr>
+                </table>
+                
+            </div>
+        </form>
+        <p class="error"><?php echo $mensaje; ?></p>
+	 
 				
 				
 				

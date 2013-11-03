@@ -12,38 +12,6 @@
         <link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
 		
-		<script type="text/javascript">
-
-
-function checkFields() {
-missinginfo = "";
-if (document.form.t1.value == "") {
-missinginfo += "\n     -  Usuario";
-}
-
-
-
-if(document.form.t2.value == "") {
-missinginfo += "\n     -  Contrasena";
-}
-
-
-
-if (missinginfo != "") {
-missinginfo ="_____________________________\n" +
-"Te ha faltado introducir los siguientes datos:\n" +
-missinginfo + "\n_____________________________" +
-"\n Por favor pulsa enter, rellena los datos y prueba de nuevo";
-alert(missinginfo);
-return false;
-}
-else 
-
-return true;
-}
-
-</script>
-		
     </head>
     <body>
         <div class="container">
