@@ -14,9 +14,6 @@
 		
 		<script type="text/javascript">
 
-<!-- This script and many more are available free online at -->
-<!-- The JavaScript Source!! http://javascript.internet.com -->
-
 
 function checkFields() {
 missinginfo = "";
