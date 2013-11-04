@@ -51,7 +51,7 @@ eval("page" + id + " = window.open(URL, '" + id +
 
 <!--Para la cabecera-->
 <table width="91%" border="0" cellspacing="1" cellpadding="2">
-<caption class="foninput2">CEBECERA</caption>
+<caption class="foninput2">NOTICIAS</caption>
 <?php if ($row= mysql_fetch_array($result1)){ ?>
 <tr> <td colspan="4"> </td>
 </tr> <tr bgcolor="#CCCC99" class="subtituloplan">

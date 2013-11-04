@@ -6,11 +6,11 @@ $dia=$_POST["t3"];
 $mes=$_POST["t4"];
 $lugar=$_POST["t5"];
 $video=$_POST["t6"];
-$imagen=$_POST["t7"];
+
 
 
 $cn = Conectarse();
-$sql = "insert into noticias(titulo,descripcion,dia,mes,lugar,embed,imagen) values('$titulo','$descripcion','$dia','$mes','$lugar','$video','$imagen')";
+$sql = "insert into noticias(titulo,descripcion,dia,mes,lugar,embed) values('$titulo','$descripcion','$dia','$mes','$lugar','$video')";
 //echo $sql;
 $result = mysql_query($sql);
 ?>

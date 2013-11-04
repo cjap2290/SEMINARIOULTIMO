@@ -1,5 +1,9 @@
 <html>
 <head><title>Nuevo Evento</title>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+
 </head>
 <link rel="stylesheet" type="text/css" href="../bruni.css">
 <script>
@@ -11,7 +15,7 @@ alert("Por favor , debe de ingresar el titulo del evento.");
 this.form1.t1.focus();
 return false;}
 ingresoU = this.form1.t3.value
-if (ingresoU.length<10){
+if (ingresoU.length<2){
 alert("Por favor , debe de ingresar un minimo de 10 palabras para publicar en su web.");
 this.form1.t3.focus();
 return false;}
@@ -67,18 +71,16 @@ return false;}
 
 <tr class="cuerpo1">
 <td>&nbsp;</td>
-<td class="cuerponoticia">&nbsp;&nbsp;Tipo de Formato:</td>
-<td colspan="3">
-<select name="t6">
-<option>Video</option>
-<option>Imagen</option>
-</selected>
-</td>
-
-
-
-
+<td class="cuerponoticia">&nbsp;embed:</td>
+<td colspan="3"><input name="t6" type="text" id="t6" size="80"></td>
 </tr>
+
+
+
+
+
+
+
 
 
 <tr class="cuerpo1">

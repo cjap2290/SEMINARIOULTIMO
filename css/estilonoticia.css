@@ -5,7 +5,7 @@ body { background:url('../images/fondo.png') repeat-y; font-family:Verdana, Gene
 
 .clear {clear:both;}
 #content {background:#efefef;}
-#left {width:900px; float:left; background:#fff;}
+#left {width:650px; float:left; background:#fff;}
 #sidebar {width:300px; float:right; background:#efefef;}
 #left .container, #sidebar .container {padding:10px;}
 
