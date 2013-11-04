@@ -1,28 +1,23 @@
 <!DOCTYPE HTML>
-
-<?php include('conexion.php');
+<?php
+include('conexion.php');
 $cn = Conectarse();
-//Sentencia sql (sin limit)
-$_pagi_sql = "select * from noticias order by id DESC";
-//cantidad de resultados por página (opcional, por defecto 20)
-$_pagi_cuantos = 3;
-//cantidad de enlaces que se mostrarán como máximo en la barra de navegación
-$_pagi_nav_num_enlaces = 3;//Elegir un número pequeño para que se note el resultado
-//Decidimos si queremos que se muesten los errores de mysql
-$_pagi_mostrar_errores = false;//recomendado true sólo en tiempo de desarrollo.
-//Si tenemos una consulta compleja que hace que el Paginator no funcione correctamente,
-//realizamos el conteo alternativo.
-$_pagi_conteo_alternativo = true;//recomendado false.
-//Supongamos que sólo nos interesa propagar estas dos variables
-$_pagi_propagar = array("titulo");//No importa si son POST o GET
-//Definimos qué estilo CSS se utilizará para los enlaces de paginación.
-//El estilo debe estar definido previamente
-$_pagi_nav_estilo = "paginador";
-//definimos qué irá en el enlace a la página anterior
-$_pagi_nav_anterior = "&lt;";// podría ir un tag <img> o lo que sea
-//definimos qué irá en el enlace a la página siguiente
-$_pagi_nav_siguiente = "&gt;";// podría ir un tag <img> o lo que sea
-include("paginator.inc.php");
+$clave=strtoupper($_POST["t1"]);
+if ($clave<>''){
+//CUENTA EL NUMERO DE PALABRAS
+$separa=explode(" ",$clave);
+$numero=count($separa);
+//echo $numero;
+if ($numero==1) {
+//SI SOLO HAY UNA PALABRA DE BUSQUEDA SE ESTABLECE UNA INSTRUCION CON LIKE
+$rsarchivo="SELECT * FROM noticias WHERE titulo LIKE '%$clave%'";
+} elseif ($numero>1) {
+//SI HAY UNA FRASE SE UTILIZA EL ALGORTIMO DE BUSQUEDA AVANZADO DE MATCH AGAINST
+//busqueda de frases con mas de una palabra y un algoritmo especializado
+$rsarchivo="select *, MATCH (titulo) AGAINST ('$clave') AS Score from noticias WHERE MATCH(titulo) AGAINST ('$clave') ORDER BY Score DESC";
+}
+}
+$archivo = mysql_query($rsarchivo); ///ejecuto la consulta like
 ?>
 <html>
 
@@ -64,11 +59,6 @@ $rspie="select * from pie where principal=1";
 $pie=mysql_query($rspie);
 $rspie=mysql_fetch_array($pie);	
 
-//PARA EL MENU DE OPCIONES
-$rsmenu="select * from menu where principal=1";
-$menu=mysql_query($rsmenu);
-$rsmenu=mysql_fetch_array($menu);
-
 //PARA LAS NOTICIAS
 $rsnoticia="select * from noticias";
 $noticia=mysql_query($rsnoticia);
@@ -98,12 +88,7 @@ $rsslider=mysql_fetch_array($slider);
 							<h1><?php echo $rsencabezado["titulo"]?></h1> 
 				<h2><?php echo $rsencabezado["subtitulo"]?></h2>
 
-					<div id="buscador">
-						<form action="busqueda.php" method="POST">
-						<input type="text" name="t1" size="40"style="border-radius:6px;"/>
-						<input type="submit" value="Buscar Noticia" style="border-radius:6px;"/>
-						</form>
-					</div>
+					
 			
 				
 		</div>
@@ -111,11 +96,11 @@ $rsslider=mysql_fetch_array($slider);
 		
 		
 		<ul id="css3menu4" class="topmenu">
-	<li class="topfirst"><a href="index.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu1"]?></a></li>
-	<li class="topmenu"><a href="nosotros.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu2"]?></a></li>
+	<li class="topfirst"><a href="index.php" style="height:26px;line-height:26px;">Inicio</a></li>
+	<li class="topmenu"><a href="nosotros.php" style="height:26px;line-height:26px;">Nosotros</a></li>
 	
-	<li class="topmenu"><a href="noticias.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu3"]?></a></li>
-	<li class="toplast"><a href="contacto.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu4"]?></a></li>
+	<li class="topmenu"><a href="noticias.php" style="height:26px;line-height:26px;">Noticias</a></li>
+	<li class="toplast"><a href="contacto.php" style="height:26px;line-height:26px;">Contacto</a></li>
 
 </ul>
 <!-- End css3menu.com BODY section -->
@@ -150,34 +135,37 @@ $rsslider=mysql_fetch_array($slider);
 								<div id="left">
 								
 								<div class="container">
-								<?php while($row = mysql_fetch_array($_pagi_result)){ ?>
-								<div class="post">
+								<?php
+									while ($rsarchivo=mysql_fetch_array($archivo)) {
+								?>
+									<div class="post">
 										<div class="postheader">
 												<div class="date shadow">
-												
-												<span class="day"><?php echo $row["dia"]?></span>
-												<span class="month"><?php echo $row["mes"]?></span>
-
+													<span class="day"><?php echo preg_replace("/$clave/","<i><b>$clave</b></i>", $rsarchivo['dia']) ?></span>
+												<span class="month"><?php echo preg_replace("/$clave/","<i><b>$clave</b></i>", $rsarchivo['mes']) ?></span>
 												</div>
 										
 										 
 										</div>
 										
-										<div class="postcontent"><h2><a href="#"><?php echo $row["titulo"]?></a></h2>
+										<div class="postcontent"><h2><a href="#"><?php echo preg_replace("/$clave/","<i><b>$clave</b></i>", $rsarchivo['titulo']) ?></a></h2>
 
-										  <p><?php echo $row["descripcion"]?>	</p>
+										 
+										  <p><?php echo preg_replace("/$clave/","<i><b>$clave</b></i>", $rsarchivo['descripcion']) ?>	</p>
 										  
-										<?php echo '<iframe width="410" height="305" src="'.$row['embed'].'" frameborder="0" allowfullscreen></iframe>'?>
-										  
-										  
+										
+										
+											<?php echo '<iframe width="410" height="305" src="'.$rsarchivo['embed'].'" frameborder="0" allowfullscreen></iframe>'?>
+
+									
 										 </div>
 								</div>
 								
+								<?php } ?>
 								
 								
-								<?php }
-echo"<p>".$_pagi_navegacion."</p>";
-?>
+								
+							
 								
 								  
 								</div>

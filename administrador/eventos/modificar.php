@@ -1,10 +1,29 @@
 <?php include('../conexion.php');
 $cn = Conectarse();
 $codigo = $_GET["Modee"];
-$sql="select * from cms1 where id='$codigo'";
-//echo $sql;
-$result=mysql_query($sql);
-$row= mysql_fetch_array($result)
+
+
+
+//para cabecera
+$sql1="select * from encabezado where id='$codigo'";
+$result1=mysql_query($sql1);
+$row= mysql_fetch_array($result1);
+
+//para el pie
+$sql2="select * from pie where id='$codigo'";
+$result2=mysql_query($sql2);
+$row1= mysql_fetch_array($result2);
+
+
+//para el contenido
+$sql3="select * from contenido where id='$codigo'";
+$result3=mysql_query($sql2);
+$row2= mysql_fetch_array($result3);
+
+//para la noticia
+$sql4="select * from noticias where id='$codigo'";
+$result4=mysql_query($sql2);
+$row3= mysql_fetch_array($result4);
 ?>
 <html>
 <head><title>Modificar Evento</title>

@@ -40,6 +40,19 @@ if($_SESSION['iduser']=="cjap90")
 <td height="40" class="bloquemenu"><a href="eventos/managernoticia.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Noticia</a></td>
 </tr>
 
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managernosotros.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">About Us</a></td>
+</tr>
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managermenu.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Menu de Opciones</a></td>
+</tr>
+
+
+
 <tr><td height="10"></td></tr>
 <tr >
 <td height="40" class="bloquemenu"><a href="eventos/registrar.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Registrar</a></td>
@@ -85,6 +98,23 @@ else{?>
 <tr >
 <td height="40" class="bloquemenu"><a href="eventos/managerpie.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Pie</a></td>
 </tr>
+
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managernoticia.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Noticia</a></td>
+</tr>
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managernosotros.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">About Us</a></td>
+</tr>
+
+<tr><td height="10"></td></tr>
+<tr >
+<td height="40" class="bloquemenu"><a href="eventos/managermenu.php" class="b" target="bandeja"><img src="imagenes/item.gif" border="0">Menu de Opciones</a></td>
+</tr>
+
 
 <tr><td height="10"></td></tr>
 <tr >

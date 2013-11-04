@@ -39,6 +39,11 @@ $rscontenido=mysql_fetch_array($contenido);
 $rspie="select * from pie where principal=1";
 $pie=mysql_query($rspie);
 $rspie=mysql_fetch_array($pie);	
+
+//PARA EL MENU DE OPCIONES
+$rsmenu="select * from menu where principal=1";
+$menu=mysql_query($rsmenu);
+$rsmenu=mysql_fetch_array($menu);
 		
 //Para Publicidad
 
@@ -70,11 +75,11 @@ $rsslider=mysql_fetch_array($slider);
 		
 		
 		<ul id="css3menu4" class="topmenu">
-	<li class="topfirst"><a href="index.php" style="height:26px;line-height:26px;">Inicio</a></li>
-	<li class="topmenu"><a href="nosotros.php" style="height:26px;line-height:26px;">Nosotros</a></li>
-	<li class="topmenu"><a href="programas.php" style="height:26px;line-height:26px;">Programas</a></li>
-	<li class="topmenu"><a href="noticias.php" style="height:26px;line-height:26px;">Noticias</a></li>
-	<li class="toplast"><a href="contacto.php" style="height:26px;line-height:26px;">Contacto</a></li>
+	<li class="topfirst"><a href="index.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu1"]?></a></li>
+	<li class="topmenu"><a href="nosotros.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu2"]?></a></li>
+	
+	<li class="topmenu"><a href="noticias.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu3"]?></a></li>
+	<li class="toplast"><a href="contacto.php" style="height:26px;line-height:26px;"><?php echo $rsmenu["menu4"]?></a></li>
 
 </ul>
 <!-- End css3menu.com BODY section -->

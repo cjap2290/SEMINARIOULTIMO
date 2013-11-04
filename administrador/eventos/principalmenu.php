@@ -4,11 +4,11 @@ $codigo = $_GET["Modee"];
 
 
 
-
-$noticia="update noticia set principal='0'";
-$noticia2="update noticia set principal='1' where id='$codigo'";
-$rsnoticia=mysql_query($noticia);
-$rsnoticia2=mysql_query($noticia2);
+//PARA LA CABECERA
+$menu="update menu set principal='0'";
+$menu2="update menu set principal='1' where id='$codigo'";
+$rsmenu=mysql_query($menu);
+$rsmenu2=mysql_query($menu2);
 
 
 
@@ -19,7 +19,7 @@ $rsnoticia2=mysql_query($noticia2);
 <link rel="stylesheet" type="text/css" href="../bruni.css">
 <body topmargin="0" leftmargin="0">
 <table width="100%" cellspacing="1" cellpadding="1">
-<tr class="noticias">
+<tr class="encabezados">
 <td width="85%">&nbsp;</td>
 <td width="15%">&nbsp;</td>
 </tr>
@@ -28,7 +28,7 @@ $rsnoticia2=mysql_query($noticia2);
 <td class="dtexto">&nbsp;</td>
 </tr>
 <tr class="cuerpo1">
-<td height="26" valign="bottom"><div align="right"><span class="dtexto"><a href="managernoticia.php" class="b">Regresar</a></span></div></td>
+<td height="26" valign="bottom"><div align="right"><span class="dtexto"><a href="managermenu.php" class="b">Regresar</a></span></div></td>
 <td valign="bottom">&nbsp;</td>
 </tr>
 </table>

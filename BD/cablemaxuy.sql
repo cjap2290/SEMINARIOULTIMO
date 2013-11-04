@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2013 a las 16:55:16
+-- Tiempo de generación: 04-11-2013 a las 13:42:33
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.16
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `encabezado` (
   `principal` int(1) NOT NULL DEFAULT '0',
   `mostrar` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `encabezado`
@@ -111,7 +111,59 @@ CREATE TABLE IF NOT EXISTS `encabezado` (
 
 INSERT INTO `encabezado` (`id`, `titulo`, `subtitulo`, `principal`, `mostrar`) VALUES
 (4, 'CABLE MAXUY', 'VALLE CHICAMA', 0, 1),
-(5, 'CABLE MAXUY', 'EMPRESA DE TV POR CABLE', 1, 1);
+(5, 'CABLE MAXUY', 'EMPRESA DE TV POR CABLE', 1, 1),
+(6, 'Inicio', '', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu`
+--
+
+CREATE TABLE IF NOT EXISTS `menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu1` varchar(50) DEFAULT NULL,
+  `menu2` varchar(255) DEFAULT NULL,
+  `menu3` varchar(255) DEFAULT NULL,
+  `menu4` varchar(255) DEFAULT NULL,
+  `principal` int(11) DEFAULT '0',
+  `mostrar` int(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `menu`
+--
+
+INSERT INTO `menu` (`id`, `menu1`, `menu2`, `menu3`, `menu4`, `principal`, `mostrar`) VALUES
+(3, 'Inicio', 'Nosotros', 'Contacto', 'Contacto', 0, 1),
+(4, 'Inicio', 'Nosotros', 'Noticias', 'Contacto', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `nosotros`
+--
+
+CREATE TABLE IF NOT EXISTS `nosotros` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vision` text,
+  `imagen1` varchar(100) DEFAULT NULL,
+  `mision` text,
+  `imagen2` varchar(100) DEFAULT NULL,
+  `principal` int(11) DEFAULT '0',
+  `mostrar` int(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `nosotros`
+--
+
+INSERT INTO `nosotros` (`id`, `vision`, `imagen1`, `mision`, `imagen2`, `principal`, `mostrar`) VALUES
+(1, 'llegar a ser una epresa lider en el valle chicama', '', 'somos una empresa comprometida cn....', '', 0, 1),
+(3, 'ser una empresa lider', 'noticias4.jpg', 'somos una empresa comprometida cn....', 'noticias2.jpg', 0, 1),
+(4, 'Establecernos como líderes en el mercado de proveedores de canales de cable, ampliando una cartera de clientes a través de desarrollo de productos innovadores, ofreciendo nuevas opciones de entretenimientos', 'vision.jpg', 'Entregar continuamente la mejor alternativa de entretenimiento, educación y actualización a través de los servicio que ofrecemos con calidad de estándares internacionales, así como ofrecer productos alternativos que satisfagan las justas demandas de nuestros clientes.', 'mision.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -131,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `embed` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `titulo` (`titulo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `noticias`
@@ -141,7 +193,10 @@ INSERT INTO `noticias` (`id`, `titulo`, `descripcion`, `dia`, `mes`, `lugar`, `p
 (1, 'NOTICIA1', 'ESTA ES KA DESCRIPCION DE LA NOTICIA1', 31, 'OCTUBRE', 'CASA GRANDE', 1, 1, '//www.youtube.com/embed/1w7OgIMMRc4'),
 (2, 'noticia2', 'descripcio noticia 2', 31, 'octubre', 'chicope', 1, 1, ''),
 (3, 'noticia3', 'descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...', 31, 'octubre', 'chocope', 1, 1, ''),
-(4, 'noticia 4', 'descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...\r\ndescripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...\r\ndescripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...', 31, 'octubre', 'chocope', 1, 1, '');
+(4, 'noticia 4', 'descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...\r\ndescripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...\r\ndescripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia... descripcion de la noticia numero 3 esto es una prueba para ver como se vera la futura noticia...', 31, 'octubre', 'chocope', 1, 1, ''),
+(5, 'TERREMOTO', 'TERREMOTO EN RUSIA', 4, 'NOVIEMBRE', 'CasaGrande', 1, 1, '//www.youtube.com/embed/6wx7yuAHup8'),
+(6, 'TERREMOTO HAITI', 'SUCESO TRAGICO EN HAITI', 4, 'NOVIEMBRE', 'Chocope', 1, 1, '//www.youtube.com/embed/vEI461wHAGM'),
+(7, 'MEXICO NIÑA DE 9 AÑOS DA A LUZ Y BUSCAN AL PADRE', 'SE EMBARAZO A CORTA EDAD', 4, 'NOVIEMBRE', 'CasaGrande', 1, 1, '//www.youtube.com/embed/Qa2M_F2f4U8');
 
 -- --------------------------------------------------------
 
@@ -162,7 +217,6 @@ CREATE TABLE IF NOT EXISTS `pie` (
 --
 
 INSERT INTO `pie` (`id`, `descripcion`, `principal`, `mostrar`) VALUES
-(2, 'christian ambrosio', 0, 1),
 (3, 'christian ambrosio', 0, 1),
 (4, 'UNIVERSIDAD CESAR VALLEJO', 0, 1),
 (5, 'CURSO DE SEMINARIO I', 0, 1),

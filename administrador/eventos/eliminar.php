@@ -1,8 +1,7 @@
 <?php include('../conexion.php');
 $cn = Conectarse();
 $codigo = $_GET["MultiData"];
-$sql="delete from contenido where id='$codigo'";
-$result=mysql_query($sql);
+
 
 //para cabecera
 $sql1="delete from encabezado where id='$codigo'";
@@ -20,6 +19,14 @@ $result3=mysql_query($sql2);
 //para la noticia
 $sql4="delete from noticias where id='$codigo'";
 $result4=mysql_query($sql2);
+
+//para el menu de opciones
+$sql5="delete from menu where id='$codigo'";
+$result5=mysql_query($sql5);
+
+//para nosotros
+$sql6="delete from nosotros where id='$codigo'";
+$result6=mysql_query($sql6);
 ?>
 <html>
 <head>
