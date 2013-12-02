@@ -72,7 +72,6 @@ $rsmenu=mysql_fetch_array($menu);
 //PARA LAS NOTICIAS
 $rsnoticia="select * from noticias";
 $noticia=mysql_query($rsnoticia);
-;
 
 		
 //Para Publicidad

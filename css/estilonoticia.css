@@ -6,9 +6,9 @@ body { background:url('../images/fondo.png') repeat-y; font-family:Verdana, Gene
 .clear {clear:both;}
 #content {background:#efefef;}
 #left {width:600px; float:left; background:#fff;}
+#left {width:650px; float:left; background:#fff;}
 #sidebar {width:300px; float:right; background:#efefef;}
 #left .container, #sidebar .container {padding:10px;}
-
 #content p {line-height:1.5em; margin-bottom:1.5em;}
 .post {padding-bottom:15px; margin-bottom:15px; border-bottom:solid 3px #ccc;}
 .post h2 {display:block; font: bold 1.8em 'American Typewriter', Georgia, sans-serif; color:#306; margin-bottom:15px;}
