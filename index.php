@@ -1,4 +1,3 @@
-
 <?php
 require_once "Mobile_Detect.php";
 $detector = new Mobile_Detect();
