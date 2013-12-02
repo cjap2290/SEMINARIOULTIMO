@@ -1,0 +1,196 @@
+input ,select,textarea       { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: 
+               #000000; background-color: white; border: 1px solid #B7B7A9 }
+
+/*ESTILOS PARA LA BANDEJA*/			   
+.menu {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#66CCCC;
+	color:#FFFFFF;
+	font-size:25px;
+	text-align:center;
+	text-decoration:none;
+	font-weight:bold;
+	border: solid 2px #999999;
+	border-radius: 10px 5px 10px 5px;
+	box-shadow: 4px 4px 8px #999999;
+	}
+.menu:hover {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#00BFFF;
+	color:#000000;
+	font-size:30px;
+	text-align:center;
+	text-decoration:none;
+	font-weight:bold;
+	}
+	
+.cuerponoticia {
+	font-family: “Times New Roman”, Times, serif;
+	color:#000080;
+	font-size:18px;
+	text-align:justify;
+}	
+
+.subtituloplan {
+	font-family:“Times New Roman”, Times, serif;
+	color:#CB5600;
+	font-size:18px;
+	font-weight:bold;
+}
+.submitext {
+	font-family:“Times New Roman”, Times, serif;
+	color:#008080;
+	font-size:15px;
+	text-align:right;
+	font-weight:bold;
+	}
+
+/*ESTILOS PARA ARRIBA.PHP*/
+
+
+.foninput2{
+	text-align:center;
+	background-color:#66CCCC;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	border: solid 2px #999999;
+	border-radius: 10px 5px 10px 5px;
+	box-shadow: 4px 4px 8px #999999;
+	font-weight:800;
+}	
+
+/*ESTILOS PARA MENU.PHP*/
+.bloquemenu {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#66CCCC;
+	color:#FFFFFF;	
+	text-decoration:none;	
+	border: solid 1px #999999;
+	border-radius: 10px 5px 10px 5px;
+	
+	
+	}
+a.b {	font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 15px;
+		font-weight:bold;
+		color: #FFFFFF;
+		text-decoration: none;
+		line-height: 11px;}
+a.b:hover {	
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		font-weight:650;
+		color: #000000;
+		font-weight:900;
+		text-decoration: none;
+		line-height: 11px;
+}
+
+
+
+/*ESTILOS PARA LA CABECERA, CONTENIDO Y PIE DE PAGINA DEL MENU DE OPCIONES*/
+a.c{	font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 15px;
+		font-weight:bold;
+		color: #000000;
+		text-decoration: none;
+		line-height: 11px;}
+a.c:hover {	
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		font-weight:650;
+		color: #000000;
+		font-weight:900;
+		text-decoration: none;
+		line-height: 11px;
+}
+
+/**/
+
+
+
+
+
+
+
+
+
+
+.menuven {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#0074B2; 
+	font-size:11px;
+	text-decoration:none;
+	}
+.menuven:hover {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:11px;
+	text-decoration:underline;
+	}
+
+.tdmenu {
+	background-color:#66CCCC;
+}	
+
+.titulonoticia {
+	font-family:verdana,Arial, Helvetica, sans-serif;
+	color:#666666;
+	font-size:10px;
+	font-weight:bold;
+}
+
+.noticia {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:10px;
+	text-align:center;
+	text-decoration:none;
+}
+.noticia:hover {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#C92827;
+	font-size:10px;
+	text-align:center;
+	text-decoration:underline;
+}
+.ampliar {
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:10px;
+}			
+.cursos {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:10px;
+	text-align:justify;
+	text-decoration:none;
+}
+.cursos:hover {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:10px;
+	text-align:center;
+	text-decoration:underline;
+}
+.tituloplan {
+	font-family:verdana,Arial, Helvetica, sans-serif;
+	color:#0A63A7;
+	font-size:10px;
+	font-weight:bold;
+}
+		
+.actualidad {
+	font-family:verdana,Arial, Helvetica, sans-serif;
+	background-color:#CED629;
+	color:#000000;
+	font-size:10px;
+	font-weight:bold;
+}	
+
+.vigente {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#FF6633;
+	font-size:10px;
+	text-align:center;
+}

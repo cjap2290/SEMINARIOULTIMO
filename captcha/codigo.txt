@@ -1,0 +1,21 @@
+<tr>
+							<td>
+								<p style="text-align:right;">Introduce el texto de la imagen</p>
+							</td>
+							<td>
+							`	<img src="captcha/captcha.php" /><br/>
+									&nbsp;&nbsp;<input type="text" size="16" name="captcha" />
+									<br/><br/>
+							</td>
+							
+						</tr><tr>
+							<td>
+								<p style="text-align:right;">Introduce el texto de la imagen</p>
+							</td>
+							<td>
+							`	<img src="captcha/captcha.php" /><br/>
+									&nbsp;&nbsp;<input type="text" size="16" name="captcha" />
+									<br/><br/>
+							</td>
+							
+						</tr>
